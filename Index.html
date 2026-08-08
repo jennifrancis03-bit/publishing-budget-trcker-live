@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A polished budget tracker dashboard for planning spending and tracking transactions." />
+    <meta name="theme-color" content="#2563eb" />
+    <meta property="og:title" content="Budget Tracker" />
+    <meta property="og:description" content="A clean personal finance dashboard designed to help you track spending at a glance." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Budget+Tracker" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Budget Tracker</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Personal finance dashboard</p>
+          <h1>Budget Tracker</h1>
+          <p class="hero-text">
+            A simple, modern tracker for organizing income, expenses, and upcoming goals.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h2>Overview</h2>
+          <p>Track what matters with a clear snapshot of your spending.</p>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="summary-grid" aria-label="Budget summary cards">
+          <article class="card summary-card">
+            <h3>Income</h3>
+            <p class="value">$3,500</p>
+          </article>
+          <article class="card summary-card">
+            <h3>Expenses</h3>
+            <p class="value">$1,860</p>
+          </article>
+          <article class="card summary-card highlight">
+            <h3>Remaining</h3>
+            <p class="value">$1,640</p>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="card form-card">
+            <h2>Add a transaction</h2>
+            <form id="transaction-form">
+              <label>
+                Description
+                <input type="text" id="description" placeholder="Groceries" required />
+              </label>
+              <label>
+                Amount
+                <input type="number" id="amount" min="0" step="0.01" placeholder="0.00" required />
+              </label>
+              <label>
+                Category
+                <select id="category">
+                  <option>Food</option>
+                  <option>Housing</option>
+                  <option>Transport</option>
+                  <option>Entertainment</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <button type="submit">Add entry</button>
+            </form>
+          </article>
+
+          <article class="card list-card">
+            <div class="list-header">
+              <h2>Recent transactions</h2>
+              <span class="pill">Live preview</span>
+            </div>
+            <ul id="transaction-list">
+              <li class="empty-state">No transactions yet. Add your first entry above.</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
